@@ -27,7 +27,7 @@ A lightweight, open-source command-line translation tool powered by the [DeepL A
 
 ```bash
 git clone https://github.com/oJohnnyBoy/DeepTCLI.git
-cd OpenJTranslator
+cd DeepTCLI
 ```
 
 ### 2. Create and activate a virtual environment
