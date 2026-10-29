@@ -1,4 +1,4 @@
-# OpenJTranslator
+# DeepTCLI
 
 A lightweight, open-source command-line translation tool powered by the [DeepL API](https://www.deepl.com/pro-api). Quickly translate text between languages directly from your terminal with an intuitive, autocomplete-enabled interface.
 
@@ -26,7 +26,7 @@ A lightweight, open-source command-line translation tool powered by the [DeepL A
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/OpenJTranslator.git
+git clone https://github.com/oJohnnyBoy/DeepTCLI.git
 cd OpenJTranslator
 ```
 
@@ -97,7 +97,7 @@ Choose option **1** to start translating. Type your target language (with autoco
 ## 📁 Project Structure
 
 ```
-OpenJTranslator/
+DeepTCLI/
 ├── main.py           # Main entry point
 ├── requirements.txt  # Python dependencies
 ├── README.md         # Project documentation
