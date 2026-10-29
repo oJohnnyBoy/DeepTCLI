@@ -56,9 +56,6 @@ Open `main.py` and replace the placeholder with your own API key:
 client = deepl.DeepLClient('YOUR_DEEPL_API_KEY_HERE')
 ```
 
-> [!CAUTION]
-> Never commit your API key to a public repository. Consider using environment variables or a `.env` file to keep it safe.
-
 ---
 
 ## ▶️ Usage
