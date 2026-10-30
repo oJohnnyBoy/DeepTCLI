@@ -1,27 +1,27 @@
 # DeepTCLI
 
-A lightweight, open-source command-line translation tool powered by the [DeepL API](https://www.deepl.com/pro-api). Quickly translate text between languages directly from your terminal with an intuitive, autocomplete-enabled interface.
+DeepTCLI is a lightweight command-line translation tool powered by the [DeepL API](https://www.deepl.com/pro-api). It lets you translate text from your terminal, save API keys locally, and manage them from an interactive menu.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🌐 Translate text to multiple languages (Portuguese, English, Japanese, and more)
-- ⌨️ Autocomplete language selection via `prompt_toolkit`
-- 🎨 Colorful terminal output with `rich`
-- 🔑 DeepL API integration for high-quality machine translation
-- 🖥️ Cross-platform support (Windows & Linux/macOS)
+- Translate text using the DeepL API
+- Autocomplete language selection with `prompt_toolkit`
+- Rich terminal UI with `rich`
+- Save and manage API keys locally in `keys.json`
+- Cross-platform support for Windows, Linux, and macOS
 
 ---
 
-## 📋 Requirements
+## Requirements
 
 - Python 3.10+
-- A valid [DeepL API key](https://www.deepl.com/pro-api) (Free tier available)
+- A valid [DeepL API key](https://www.deepl.com/pro-api)
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the repository
 
@@ -48,38 +48,50 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Set your DeepL API key
-
-Open `main.py` and replace the placeholder with your own API key:
-
-```python
-client = deepl.DeepLClient('YOUR_DEEPL_API_KEY_HERE')
-```
-
----
-
-## ▶️ Usage
+### 4. Run the app
 
 ```bash
 python main.py
 ```
 
-You will be presented with a menu:
+---
 
-```
-__________________________
+## Usage
 
----------WELCOME!---------
-__________________________
+When the app starts, you will see a menu like this:
 
+```text
+[bold red]Welcome to DeepTCLI
 Select what do you want to do:
 1. Translate.
-2. Import a API KEY.
+2. Manage your API keys.
 ```
 
-Choose option **1** to start translating. Type your target language (with autocomplete support) and enter the text you want to translate.
+### Translate text
 
-### Supported Languages (examples)
+Choose `1` and then type the target language code, such as:
+
+- `PT-BR`
+- `EN-US`
+- `JA`
+
+Then enter the text you want to translate.
+
+### Manage your API keys
+
+Choose `2` to open the API manager. From there you can:
+
+- import a key
+- delete a saved key
+- list saved keys
+
+Keys are stored in a local file named `keys.json` in the project directory.
+
+---
+
+## Supported languages
+
+Examples include:
 
 | Code  | Language            |
 | ----- | ------------------- |
@@ -90,34 +102,35 @@ Choose option **1** to start translating. Type your target language (with autoco
 | FR    | French              |
 | DE    | German              |
 
-> For the full list of supported language codes, refer to the [DeepL API docs](https://developers.deepl.com/docs/resources/supported-languages).
+For the full list, see the [DeepL supported languages documentation](https://developers.deepl.com/docs/resources/supported-languages).
 
 ---
 
-## 📁 Project Structure
+## Project structure
 
-```
+```text
 DeepTCLI/
-├── main.py           # Main entry point
+├── config.py         # API key storage and menu logic
+├── main.py           # Main translation app entry point
+├── keys.json         # Saved API keys (created when first imported)
 ├── requirements.txt  # Python dependencies
 ├── README.md         # Project documentation
-└── venv/             # Virtual environment (not committed)
+└── .gitignore        # Git ignore rules
 ```
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Contributions are welcome! Feel free to open issues or submit pull requests.
+Contributions are welcome. If you want to improve the project:
 
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a pull request
 
 ---
 
-## 📄 License
+## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the MIT license.
