@@ -10,7 +10,13 @@ from rich.table import Table
 console = Console()
 
 # Stored next to this script, so it works no matter where you run it from
-FILE = Path(__file__).parent / 'keys.json'
+if os.name == 'nt':
+    _base = Path(os.environ.get('APPDATA', Path.home()))
+else:
+    _base = Path(os.environ.get('XDG_CONFIG_HOME', Path.home() / '.config'))
+
+CONFIG_DIR = _base / 'deeptcli'
+FILE = CONFIG_DIR / 'keys.json'
 
 # Menu number -> service name. Add more APIs here later.
 SERVICES = {'1': 'deepl'}
@@ -37,6 +43,7 @@ def load_keys() -> dict:
 
 
 def save_keys(keys: dict) -> None:
+    CONFIG_DIR.mkdir(parents=True, exist_ok=True)
     FILE.write_text(json.dumps(keys, indent=2), encoding='utf-8')
     try:
         os.chmod(FILE, 0o600)  # owner-only on Linux/macOS (limited effect on Windows)

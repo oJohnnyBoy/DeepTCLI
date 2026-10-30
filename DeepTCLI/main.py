@@ -6,7 +6,7 @@ from prompt_toolkit.completion import WordCompleter as WC
 from pathlib import Path
 from rich.console import Console
 from rich.panel import Panel
-import config
+from . import config
 
 
 
